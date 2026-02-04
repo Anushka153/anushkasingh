@@ -1,0 +1,136 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.about-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+}
+
+.about-content strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.education-card, .interests-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.interests-card {
+  margin-top: 2rem;
+}
+
+.education-card h3, .interests-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.education-item {
+  margin-bottom: 1.5rem;
+}
+
+.education-item:last-child {
+  margin-bottom: 0;
+}
+
+.education-item h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.education-item .degree {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.education-item .year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.interests-list {
+  list-style: none;
+}
+
+.interests-list li {
+  padding: 0.5rem 0;
+  color: var(--text-light);
+  border-bottom: 1px solid var(--border);
+}
+
+.interests-list li:last-child {
+  border-bottom: none;
+}
+
+.interests-list li::before {
+  content: "◆";
+  color: var(--accent);
+  margin-right: 12px;
+}
+
+.contact-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.contact-section h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  padding: 12px 24px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

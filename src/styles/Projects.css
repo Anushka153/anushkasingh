@@ -1,0 +1,120 @@
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.project-header {
+  margin-bottom: 2rem;
+}
+
+.project-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.project-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.project-section {
+  margin-bottom: 1.5rem;
+}
+
+.project-section h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.project-section p {
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.project-section ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.project-section li {
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  color: var(--text-light);
+  position: relative;
+  line-height: 1.6;
+}
+
+.project-section li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.impact-box {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(129, 140, 248, 0.05) 100%);
+  border-left: 3px solid var(--accent);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.impact-box h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.impact-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.impact-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.impact-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+}
