@@ -85,9 +85,9 @@ function About() {
             <a href="tel:6082390509" className="contact-link">
               Phone
             </a>
-            <a href="#" className="contact-link">
+            {/* <a href="" className="contact-link">
               Resume
-            </a>
+            </a> */}
           </div>
           <p style={{ marginTop: '1.5rem', fontSize: '0.9rem' }}>
             US Work Authorization: Till 2029
