@@ -136,6 +136,7 @@ Edit CSS variables in `src/styles/App.css`:
   --primary: #0F0F0F;
   --accent: #6366F1;
   --accent-light: #818CF8;
+  --accent-background: #f1f1ff;;
   --bg: #FAFAFA;
   --text: #171717;
   --text-light: #525252;

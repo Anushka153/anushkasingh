@@ -2,6 +2,7 @@
   --primary: #0F0F0F;
   --accent: #6366F1;
   --accent-light: #818CF8;
+  --accent-background: #f1f1ff;
   --bg: #FAFAFA;
   --text: #171717;
   --text-light: #525252;
@@ -30,6 +31,7 @@ body {
 
 /* Page Container */
 .page {
+  background: var(--accent-background);
   padding-top: 100px;
   min-height: 100vh;
   flex: 1;
