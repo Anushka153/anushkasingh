@@ -12,16 +12,19 @@ function Projects() {
       context: 'Digital health startup needed to scale personalized nutrition advice without ballooning operational costs. Nutritionists were manually responding to every user query, creating a 2-day response time and limiting the number of users the platform could serve. The challenge was maintaining quality of advice while dramatically increasing speed and capacity.',
       role: 'Product strategy, roadmap ownership, cross-functional leadership, AI feature development from concept to launch',
       whatIDid: [
-        'Defined product strategy for core mobile app functionality, identifying key friction points through user analytics and interviews',
-        'Led development of 3 AI-powered features that integrated genetic, gut, and lifestyle data to provide instant nutrition recommendations',
-        'Partnered with engineering team on prompt engineering and model optimization to ensure accuracy and scalability',
-        'Drove simplified user flows that improved access to health insights while maintaining personalization',
-        'Managed beta launch with 2,000+ users and onboarded 3 B2B clients'
+        'Defined product strategy for core mobile app functionality by identifying friction points through user analytics, cohort analysis, and structured user interviews',
+        'Led end-to-end development of 3 AI-powered features integrating genetic, gut microbiome, glucose, and lifestyle data to generate instant, personalized nutrition guidance',
+        'Built and launched an AI-powered barcode scanning feature that allowed users to scan packaged foods and receive real-time personalized health scores and recommendations based on their unique biological profile',
+        'Designed evaluation frameworks for model performance, including prompt accuracy testing, hallucination checks, edge-case audits, and nutritionist validation loops before production rollout',
+        'Partnered closely with engineering on prompt engineering, response templating, and token optimization strategies to reduce latency and inference cost while preserving personalization depth',
+        'Implemented structured context retrieval and response chunking to minimize unnecessary token usage and improve system scalability',
+        'Simplified user flows to reduce cognitive load and increase access to actionable health insights',
+        'Managed beta launch with 2,000+ users, collected behavioral and qualitative feedback, iterated on feature improvements, and supported onboarding of 3 B2B clients',
       ],
       impact: [
         { value: '30s', label: 'response time (from 2 days)' },
-        { value: '27%', label: 'engagement boost' },
-        { value: '45%', label: 'projected margin lift' },
+        // { value: '27%', label: 'engagement boost' },
+        { value: '~45%', label: 'projected margin lift' },
         { value: '$8M', label: 'projected ARR from B2B' }
       ]
     },
