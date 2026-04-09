@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
+import ContactSection from '../components/ContactSection';
 
 function Home() {
   return (
@@ -17,18 +18,23 @@ function Home() {
             <span className="highlight">AI, data, and human behavior</span>
           </h1>
           <p className="subhead">
-            MBA candidate at Wisconsin School of Business with 5+ years in software and product. 
-            I turn complex problems into clear, usable solutions.
+            MBA candidate at Wisconsin School of Business with 5+ years in
+            software and product. I turn complex problems into clear, usable
+            solutions.
           </p>
           <p className="personality">
-            // I like messy problems, clean systems, and products that actually help people.
+            // I like messy problems, clean systems, and products that actually
+            help people.
           </p>
 
           <div className="cta-buttons">
             <Link to="/projects" className="btn btn-primary">
               View My Work
             </Link>
-            <a href="mailto:anushka.singh@wisc.edu" className="btn btn-secondary">
+            <a
+              href="mailto:anushka.singh@wisc.edu"
+              className="btn btn-secondary"
+            >
               Let's Talk
             </a>
           </div>
@@ -49,6 +55,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <ContactSection />
     </div>
   );
 }
