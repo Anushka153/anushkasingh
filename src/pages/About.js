@@ -8,28 +8,31 @@ function About() {
         <div className="section-header">
           <h2 className="section-title">About Me</h2>
           <p className="section-intro">
-            I'm a product manager who believes that the best products are built at the 
-            intersection of user empathy, business strategy, and technical feasibility.
+            I'm a product manager who believes that the best products are built
+            at the intersection of user empathy, business strategy, and
+            technical feasibility.
           </p>
         </div>
 
         <div className="about-grid">
           <div className="about-content">
             <p>
-              Currently pursuing my MBA with a focus on product management and technology 
-              strategy, I bring a unique blend of <strong>analytical rigor and creative 
-              problem-solving</strong>.
+              Currently pursuing my MBA with a focus on product management and
+              technology strategy, I bring a unique blend of{' '}
+              <strong>analytical rigor and creative problem-solving</strong>.
             </p>
             <p>
-              My approach is rooted in data, but driven by a genuine desire to build products 
-              that people love. From conducting user research to defining product roadmaps, 
-              from working with engineering teams to presenting to stakeholders, I thrive in 
-              the dynamic, cross-functional environment that product management demands.
+              My approach is rooted in data, but driven by a genuine desire to
+              build products that people love. From conducting user research to
+              defining product roadmaps, from working with engineering teams to
+              presenting to stakeholders, I thrive in the dynamic,
+              cross-functional environment that product management demands.
             </p>
             <p>
-              I've worked across healthcare, fintech, B2B SaaS, and mobility platforms, often 
-              as the bridge between technical and non-technical teams. I love the early-stage 
-              chaos where nothing is figured out yet.
+              I've worked across healthcare, fintech, B2B SaaS, and mobility
+              platforms, often as the bridge between technical and non-technical
+              teams. I love the early-stage chaos where nothing is figured out
+              yet.
             </p>
           </div>
 
@@ -45,7 +48,9 @@ function About() {
               </div>
               <div className="education-item">
                 <h4>Dr. A.P.J. Abdul Kalam Technical University</h4>
-                <div className="degree">B.Tech, Computer Science Engineering</div>
+                <div className="degree">
+                  B.Tech, Computer Science Engineering
+                </div>
                 <div className="year">2015 - 2019</div>
               </div>
             </div>
@@ -67,8 +72,8 @@ function About() {
         <div className="contact-section">
           <h3>Let's Connect</h3>
           <p>
-            I'm actively seeking full-time product management opportunities. Always happy 
-            to chat about product, startups, or AI.
+            I'm actively seeking full-time product management opportunities.
+            Always happy to chat about product, startups, or AI.
           </p>
           <div className="contact-links">
             <a href="mailto:anushka.singh@wisc.edu" className="contact-link">
@@ -81,6 +86,14 @@ function About() {
               className="contact-link"
             >
               LinkedIn
+            </a>
+            <a
+              href="https://github.com/Anushka153"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              GitHub
             </a>
             <a href="tel:6082390509" className="contact-link">
               Phone
