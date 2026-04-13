@@ -5,101 +5,78 @@ import '../styles/Projects.css';
 function Projects() {
   const projects = [
     {
+      number: '01',
       tag: 'AI • Health Tech',
-      title: 'AI-Powered Nutrition Platform',
-      meta: 'Digbi Health • Product Manager Intern • 2025',
-      image: '/assets/images/digbi-project.jpg', // You'll need to add actual images
-      context: 'Digital health startup needed to scale personalized nutrition advice without ballooning operational costs. Nutritionists were manually responding to every user query, creating a 2-day response time and limiting the number of users the platform could serve. The challenge was maintaining quality of advice while dramatically increasing speed and capacity.',
-      role: 'Product strategy, roadmap ownership, cross-functional leadership, AI feature development from concept to launch',
-      whatIDid: [
-        'Defined product strategy for core mobile app functionality by identifying friction points through user analytics, cohort analysis, and structured user interviews',
-        'Led end-to-end development of 3 AI-powered features integrating genetic, gut microbiome, glucose, and lifestyle data to generate instant, personalized nutrition guidance',
-        'Built and launched an AI-powered barcode scanning feature that allowed users to scan packaged foods and receive real-time personalized health scores and recommendations based on their unique biological profile',
-        'Designed evaluation frameworks for model performance, including prompt accuracy testing, hallucination checks, edge-case audits, and nutritionist validation loops before production rollout',
-        'Partnered closely with engineering on prompt engineering, response templating, and token optimization strategies to reduce latency and inference cost while preserving personalization depth',
-        'Implemented structured context retrieval and response chunking to minimize unnecessary token usage and improve system scalability',
-        'Simplified user flows to reduce cognitive load and increase access to actionable health insights',
-        'Managed beta launch with 2,000+ users, collected behavioral and qualitative feedback, iterated on feature improvements, and supported onboarding of 3 B2B clients',
+      problem:
+        "Nutritionists were manually answering every user query—a 2-day response loop that couldn't scale past a few hundred users.",
+      meta: 'Digbi Health  •  PM Intern  •  Summer 2025',
+      insight:
+        "Personalization didn't require a human in the loop. It required a system that understood each user's biology as well as a nutritionist would—then delivered it instantly.",
+      keyMoves: [
+        'Led end-to-end development of 3 AI features integrating genetic, gut microbiome, and lifestyle data—concept through beta launch with 2,000+ users',
+        "Built barcode scanning that delivers real-time, biologically-personalized health scores on packaged foods—a feature users hadn't asked for but immediately adopted",
+        'Designed evaluation frameworks with hallucination checks, nutritionist validation loops, and edge-case audits before every production rollout',
+        'Partnered with engineering on prompt architecture and token optimization—reduced latency while preserving the depth of personalization',
       ],
       impact: [
-        { value: '30s', label: 'response time (from 2 days)' },
-        // { value: '27%', label: 'engagement boost' },
-        { value: '~45%', label: 'projected margin lift' },
-        { value: '$8M', label: 'projected ARR from B2B' }
-      ]
+        { value: '30s', label: 'nutritionist response time (from 2 days)' },
+        { value: '~45%', label: 'projected gross margin lift' },
+        { value: '$8M', label: 'projected ARR from 3 B2B clients' },
+      ],
     },
     {
+      number: '02',
       tag: 'Healthcare • Platform',
-      title: 'Consolidated Healthcare Platform',
-      meta: 'TruDoc HealthCare • Software Development Engineer • 2023-2024',
-      context: 'Telemedicine platform serving 2M users across the Middle East had fragmented services across multiple apps, creating poor user experience and high operational overhead. Patients and providers struggled to navigate between different systems for appointments, consultations, and medical records. The business was bleeding money on infrastructure costs and support tickets.',
-      role: 'Led cross-functional team of engineers and designers through architectural redesign and migration',
-      whatIDid: [
-        'Architected consolidation strategy for multiple services into a single healthcare app through cross-functional collaboration',
-        'Led migration from legacy system to modern JavaScript framework via agile sprints',
-        'Integrated video consultation feature directly into the unified platform',
-        'Balanced technical execution with user experience considerations throughout the redesign',
-        'Coordinated between product, engineering, design, and operations teams to ensure smooth transition'
+      problem:
+        '2M users across the Middle East navigated between multiple apps just to access appointments, consultations, and records—friction was killing both adoption and trust.',
+      meta: 'TruDoc HealthCare  •  Software Development Engineer  •  2023–2024',
+      insight:
+        "The platform wasn't losing on features. It was losing on coherence. Consolidation was a product strategy decision before it was an engineering one.",
+      keyMoves: [
+        'Architected the consolidation of fragmented services into a single unified healthcare app—owned the cross-functional roadmap and alignment across product, engineering, and ops',
+        'Drove migration from legacy system to modern JavaScript framework—60% performance boost with continuity of care for 2M active users',
+        'Integrated video consultation directly into the unified platform, removing the last reason users had to leave the app',
+        'Led agile sprints across engineers and designers through a high-stakes production migration with no downtime',
       ],
       impact: [
-        { value: '$1.6M', label: 'annual cost savings' },
-        { value: '60%', label: 'performance boost' },
-        { value: '26%', label: 'adoption increase' }
-      ]
-    },
-    {
-      tag: 'B2B SaaS • Fintech',
-      title: 'B2B Engagement & Communication Platform',
-      meta: 'Lummo (Donut.cx & Bukukas) • Associate TPM & Software Engineer • 2020-2023',
-      context: 'B2B SaaS platform helping 6M+ SME businesses optimize operations lacked direct communication channels with their customers. Businesses needed real-time engagement tools and better visibility into customer behavior to reduce churn and improve service delivery. High support ticket volume indicated poor product self-service.',
-      role: 'Product discovery, roadmap optimization, platform infrastructure development, iOS launch',
-      whatIDid: [
-        'Conducted product discovery using funnel conversion data to identify high-impact feature opportunities',
-        'Released two key features that directly addressed user pain points discovered through data analysis',
-        'Built real-time chat, message broadcasting, and analytics infrastructure enabling 200 customers per day per business',
-        'Implemented in-app feedback system to close the loop with users and reduce support burden',
-        'Led payments service development and launch, enhancing finance management platform',
-        'Developed and launched iOS version to extend platform accessibility beyond Android'
+        { value: '$1.6M', label: 'annual operational cost savings' },
+        { value: '60%', label: 'application performance boost' },
+        { value: '26%', label: 'increase in adoption rates' },
       ],
-      impact: [
-        { value: '21%', label: 'engagement lift' },
-        { value: '19%', label: 'fewer support tickets' },
-        { value: '14%', label: 'traffic acceleration' },
-        { value: '30%', label: 'more users via iOS' }
-      ]
     },
     {
+      number: '03',
       tag: 'E-commerce • MBA Project',
-      title: 'Shopbop "Bop & Browse" — Personalized Outfit Matching',
-      meta: 'Amazon Product Management Practicum • 2024-2025',
-      image: '/assets/images/shopbop-project.png',
-      context: 'Leading a cross-functional team to design and prototype a personalized outfit-matching experience for Shopbop customers. The challenge is balancing AI-driven personalization with the joy of discovery and browsing that fashion shoppers expect. As quoted in Wisconsin School of Business: "We\'re exploring ways to enhance the customer experience and strengthen digital retail operations."',
-      role: 'Product strategy, user research, cross-functional team leadership, prototype design. Acting as Product Manager for a team of computer science students.',
-      whatIDid: [
-        'Led user research to understand customer needs, shopping behaviors, and pain points in outfit discovery',
-        'Designed product concept balancing AI personalization with browsing freedom and serendipity',
-        'Applied agile methodologies to rapid prototyping and iteration cycles',
-        'Coordinated across design, engineering, and business stakeholders to align on vision and feasibility',
-        'Developed product requirements and success metrics framework',
-        'Managed cross-functional team replicating real-world product development environment'
-      ]
+      problem:
+        'Shopbop customers discovered great individual pieces but rarely left with a complete outfit—the experience was built for items, not for how fashion shoppers actually think.',
+      meta: 'Amazon Product Management Practicum (Shopbop)  •  2024–2025',
+      insight:
+        "The opportunity wasn't smarter search—it was contextual discovery. AI that reasons in outfits rather than SKUs, balancing personalization with the serendipity that makes browsing enjoyable.",
+      keyMoves: [
+        "Led user research to map how customers think about outfit discovery versus individual item browsing—surfaced a gap the existing experience couldn't address",
+        'Designed a product concept that balances AI-driven personalization with browsing freedom, informed by both behavioral data and qualitative research',
+        'Applied agile cycles for rapid prototyping with a cross-functional team of CS students and business stakeholders replicating a real PM environment',
+        'Developed product requirements, success metrics, and an evaluation framework for measuring outfit relevance at scale',
+      ],
     },
     {
+      number: '04',
       tag: 'Mobility • Platform',
-      title: 'Vendor Onboarding & Management Tool',
-      meta: 'Drivezy • Mobile Application Developer • 2019-2020',
-      context: 'Vehicle-sharing platform with 2M+ users faced a major bottleneck in scaling supply. Vendor onboarding took 7 days on average, involving manual verification, documentation, and training. This slow process limited platform growth and frustrated potential partners.',
-      role: 'Mobile development and platform optimization',
-      whatIDid: [
-        'Developed efficient vendor onboarding and management tool to streamline the process',
-        'Revamped mobile app architecture and strategized component development practices',
-        'Focused on improving platform usability for both vendors and end users'
+      problem:
+        'Vehicle-sharing growth was supply-constrained. Onboarding a new vendor took 7 days—most dropped off before completing the process, strangling supply acquisition.',
+      meta: 'Drivezy  •  Mobile Application Developer  •  2019–2020',
+      insight:
+        "The constraint wasn't vendor interest. It was process friction. Cutting onboarding time was a supply acquisition strategy, not just an ops improvement.",
+      keyMoves: [
+        'Rebuilt the vendor onboarding flow to streamline verification, documentation, and training—reducing TAT from 7 days to 2',
+        'Revamped mobile app architecture and component strategy, directly contributing to 15% revenue growth',
+        'Optimized the end-to-end vendor experience with a focus on reducing drop-off at each stage of the funnel',
       ],
       impact: [
-        { value: '2 days', label: 'onboarding time (from 7 days)' },
-        { value: '15%', label: 'revenue growth' }
-      ]
-    }
+        { value: '2 days', label: 'vendor onboarding time (from 7)' },
+        { value: '15%', label: 'revenue growth' },
+      ],
+    },
   ];
 
   return (
@@ -108,8 +85,10 @@ function Projects() {
         <div className="section-header">
           <h2 className="section-title">Projects</h2>
           <p className="section-intro">
-            I work best on ambiguous problems where strategy, data, and execution need to 
-            come together. Here are projects that show how I think and build.
+            Each of these started with a constraint or a gap—something that
+            couldn't scale, a loop that was too slow, an experience that didn't
+            match how people actually behaved. Here's how I framed the problem
+            and what I decided to do about it.
           </p>
         </div>
 

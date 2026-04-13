@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
 :root {
-  --primary: #0F0F0F;
-  --accent: #6366F1;
-  --accent-light: #818CF8;
-  --accent-background: #f1f1ff;
-  --bg: #FAFAFA;
-  --text: #171717;
-  --text-light: #525252;
-  --border: #E5E5E5;
-  --card-bg: #FFFFFF;
+  --bg: #12111F;
+  --surface: #181730;
+  --card-bg: #1C1B34;
+  --card-hover: #22204A;
+  --accent: #8B80FB;
+  --accent-light: #B8AEFF;
+  --accent-glow: rgba(139, 128, 251, 0.18);
+  --accent-bg: rgba(139, 128, 251, 0.09);
+  --text: #F5F4FC;
+  --text-light: #C2BEDC;
+  --border: rgba(139, 128, 251, 0.18);
+  --border-hover: rgba(139, 128, 251, 0.48);
+  --green: #34D399;
 }
 
 * {
@@ -20,7 +26,8 @@ body {
   font-family: 'Epilogue', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
 .App {
@@ -29,9 +36,8 @@ body {
   flex-direction: column;
 }
 
-/* Page Container */
 .page {
-  background: var(--accent-background);
+  background: var(--bg);
   padding-top: 100px;
   min-height: 100vh;
   flex: 1;
@@ -40,12 +46,12 @@ body {
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 2rem 4rem;
+  padding: 0 2rem 5rem;
 }
 
 /* Section Headers */
 .section-header {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .section-title {
@@ -53,26 +59,28 @@ body {
   font-weight: 800;
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
+  color: var(--text);
 }
 
 .section-intro {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-light);
-  max-width: 700px;
-  line-height: 1.7;
+  max-width: 680px;
+  line-height: 1.75;
 }
 
 /* Buttons */
 .btn {
-  padding: 14px 28px;
-  font-size: 0.95rem;
+  padding: 13px 26px;
+  font-size: 0.92rem;
   font-weight: 600;
   text-decoration: none;
   border-radius: 8px;
-  transition: all 0.3s;
+  transition: all 0.25s;
   cursor: pointer;
   border: none;
   display: inline-block;
+  font-family: 'Epilogue', sans-serif;
 }
 
 .btn-primary {
@@ -83,18 +91,31 @@ body {
 .btn-primary:hover {
   background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 28px rgba(123, 111, 250, 0.45);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--text);
+  color: var(--text-light);
   border: 1px solid var(--border);
 }
 
 .btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--border-hover);
+  color: var(--text);
+  box-shadow: 0 0 20px rgba(123, 111, 250, 0.08);
+}
+
+/* Scroll Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Responsive */

@@ -1,13 +1,13 @@
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-top: 3rem;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
 }
 
 .about-content {
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.82;
   color: var(--text-light);
 }
 
@@ -16,25 +16,34 @@
 }
 
 .about-content strong {
-  color: var(--accent);
+  color: var(--accent-light);
   font-weight: 600;
 }
 
-.education-card, .interests-card {
+.education-card,
+.interests-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 2rem;
+  transition: border-color 0.3s;
+}
+
+.education-card:hover,
+.interests-card:hover {
+  border-color: var(--border-hover);
 }
 
 .interests-card {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
-.education-card h3, .interests-card h3 {
-  font-size: 1.25rem;
+.education-card h3,
+.interests-card h3 {
+  font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  color: var(--text);
 }
 
 .education-item {
@@ -46,20 +55,21 @@
 }
 
 .education-item h4 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
+  color: var(--text);
 }
 
 .education-item .degree {
   color: var(--text-light);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-bottom: 0.25rem;
 }
 
 .education-item .year {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--accent);
 }
 
@@ -68,9 +78,10 @@
 }
 
 .interests-list li {
-  padding: 0.5rem 0;
+  padding: 0.6rem 0;
   color: var(--text-light);
   border-bottom: 1px solid var(--border);
+  font-size: 0.93rem;
 }
 
 .interests-list li:last-child {
@@ -81,56 +92,81 @@
   content: "◆";
   color: var(--accent);
   margin-right: 12px;
+  font-size: 0.6rem;
 }
 
+/* Contact Section */
 .contact-section {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 3rem;
   text-align: center;
   margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.5;
 }
 
 .contact-section h3 {
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
 }
 
 .contact-section p {
   color: var(--text-light);
-  font-size: 1.05rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
 }
 
 .contact-links {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
 }
 
 .contact-link {
-  padding: 12px 24px;
+  padding: 10px 22px;
   background: transparent;
   border: 1px solid var(--border);
-  color: var(--text);
+  color: var(--text-light);
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s;
+  font-size: 0.88rem;
+  transition: all 0.25s;
 }
 
 .contact-link:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--border-hover);
+  color: var(--text);
+  box-shadow: 0 0 18px rgba(123, 111, 250, 0.1);
 }
 
 @media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .contact-section {
+    padding: 2rem 1.5rem;
   }
 }

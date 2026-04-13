@@ -1,8 +1,11 @@
 import React from 'react';
+import { useScrollFade } from '../hooks/useScrollFade';
 
 function ExperienceItem({ role, company, period, description, highlights }) {
+  const ref = useScrollFade();
+
   return (
-    <div className="experience-item">
+    <div ref={ref} className="experience-item fade-in">
       <div className="experience-header">
         <h3 className="experience-role">{role}</h3>
         <div className="experience-company">{company}</div>
