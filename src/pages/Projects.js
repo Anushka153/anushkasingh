@@ -87,22 +87,23 @@ export const projects = [
     tag: 'Design Systems • Frontend',
     title: 'Design System',
     company: 'Lummo (Donut.cx)',
-    role: 'Frontend Engineer',
+    role: 'Product Manager',
     duration: '2022–2023',
     challenge:
-      "Lummo was pivoting from Bukukas to Donut.cx. Three frontend engineering pods were converging on one codebase for the first time—each with different conventions, different component patterns, different definitions of correct code. A designer working across all three had no shared library—design decisions were being re-interpreted differently in every pod, every sprint. I suggested building a design system before the pivot began. Senior developers pushed back hard—it would kill the timeline. My manager was onboard but I needed the senior devs to actually cooperate on the ground. Change their minds without the authority to mandate anything, against people with more seniority and more technical context than me.",
+      "Lummo was pivoting from Bukukas to Donut.cx. Three frontend engineering pods were converging on one codebase for the first time—each with different component conventions, different token strategies, and different definitions of what a 'correct' implementation looked like. A designer working across all three pods had no shared library. Every sprint, the same design decision was being interpreted three different ways in three different parts of the product. The compounding cost of that inconsistency—in QA cycles, in re-work, in handoff friction—was invisible until you added it up.",
     process: [
-      'Didn\'t go back with the same argument. Went back with a document—pros and cons of building before vs. after, industry standards showing what it cost other teams when they didn\'t, and a concrete POC proposal. POC framing was deliberate: not asking them to commit to a full design system—asking for a small, time-boxed yes.',
-      'Built the design system alongside the pivot product in parallel—live catalogue of actual requirements. Components documented in real time from the product being built. By the time I presented to stakeholders it wasn\'t a proposal anymore—it was a demonstration built from their own product requirements.',
-      'One senior dev didn\'t adopt it for the first 2–3 sprints. Kept writing his own CSS—long, repetitive, inconsistent standards, the exact problem the library was built to solve. Set up a 1:1 using the PR data as the entry point. Reframed the argument entirely—not \'use my system\' but \'by adopting this library you can drop Tailwind, eliminate repetitive CSS, and stop maintaining old components. This saves you time.\' He adopted it fully before launch.',
-      'Led a pod of 3 engineers through the full build—stakeholder meetings, cross-pod convention conflicts, live feature requests from the pivot.',
+      'Before writing any components, mapped the actual surface area: what was being built in the pivot product, what patterns were repeating across pods, and where the highest-frequency inconsistencies were. The token strategy came from that audit—not from first principles.',
+      'Made a deliberate sequencing decision: build the design system in parallel with the pivot product, not before it. This meant the component library was built from live requirements—every component had a real use case on day one, not a hypothetical one.',
+      'Defined variant coverage upfront with the designer. The decision was to ship fewer components with complete state coverage—hover, focus, disabled, error, loading—rather than more components with partial states. Incomplete states are worse than missing components because they break silently.',
+      'Token architecture was the highest-leverage early decision. Established a two-layer system: primitive tokens (raw values) and semantic tokens (contextual mappings). This meant a theme change or brand update could propagate across 70+ components by changing a handful of semantic tokens—not by touching individual components.',
+      'Led cross-pod convention alignment sessions to resolve conflicts before they became component-level inconsistencies. The hardest decisions were naming conventions and spacing scales—both required a single standard across teams building in different contexts.',
     ],
     solution:
-      "Three pods shipped one consistent product. The designer handed off once to a shared library instead of three times to three interpretations. Production-ready 2 weeks ahead of a 6-month schedule—that time went back to testing. The harder result: the senior dev who resisted longest became an advocate. The system wasn't imposed—it was adopted because it made their work easier.",
+      "Three pods shipped one consistent product from a single shared library. The designer handed off once—to the system—instead of three times to three interpretations. The token architecture meant the design system could absorb brand changes without component-level rewrites. 35+ components with hundreds of variants, production-ready 2 weeks ahead of a 6-month schedule, with that time returned to testing and edge-case coverage.",
     impact: [
-      { value: '70+', label: 'components shipped (20+ core, 70+ with all variants and states)' },
+      { value: '35+', label: 'components shipped with 100s of variants and states' },
       { value: '~50%', label: 'reduction in design-to-dev handoff time' },
-      { value: '2 weeks', label: 'production-ready ahead of a 6-month schedule' },
+      { value: '2 weeks', label: 'ahead of schedule — returned to QA' },
     ],
   },
   {
