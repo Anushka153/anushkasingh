@@ -35,9 +35,6 @@ function ContactSection() {
               Resume
             </a> */}
       </div>
-      <p style={{ marginTop: '1.5rem', fontSize: '0.9rem' }}>
-        US Work Authorization: Till 2029
-      </p>
     </div>
   );
 }

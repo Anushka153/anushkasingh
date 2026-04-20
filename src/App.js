@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Experience from './pages/Experience';
 import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
 import Gallery from './pages/Gallery';
 import './styles/App.css';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/gallery" element={<Gallery />} />
         </Routes>
         <Footer />

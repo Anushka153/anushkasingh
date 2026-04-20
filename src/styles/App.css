@@ -1,19 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg: #12111F;
-  --surface: #181730;
-  --card-bg: #1C1B34;
-  --card-hover: #22204A;
+  --bg: #0d0c1a;
+  --surface: #141328;
+  --card-bg: #16152e;
+  --card-hover: #1e1c3a;
   --accent: #8B80FB;
-  --accent-light: #B8AEFF;
-  --accent-glow: rgba(139, 128, 251, 0.18);
+  --accent-light: #b8aeff;
+  --accent-glow: rgba(139, 128, 251, 0.35);
   --accent-bg: rgba(139, 128, 251, 0.09);
+  --neon-pink: #f472b6;
+  --neon-cyan: #22d3ee;
+  --neon-purple: #a78bfa;
   --text: #F5F4FC;
   --text-light: #C2BEDC;
   --border: rgba(139, 128, 251, 0.18);
-  --border-hover: rgba(139, 128, 251, 0.48);
+  --border-hover: rgba(139, 128, 251, 0.55);
   --green: #34D399;
+  --glow-sm: 0 0 12px rgba(139, 128, 251, 0.4);
+  --glow-md: 0 0 28px rgba(139, 128, 251, 0.35), 0 0 60px rgba(139, 128, 251, 0.15);
+  --glow-lg: 0 0 40px rgba(139, 128, 251, 0.5), 0 0 100px rgba(139, 128, 251, 0.2);
 }
 
 * {
@@ -24,6 +30,7 @@
 
 body {
   font-family: 'Epilogue', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 17px;
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
@@ -41,6 +48,7 @@ body {
   padding-top: 100px;
   min-height: 100vh;
   flex: 1;
+  position: relative;
 }
 
 .container {
@@ -55,7 +63,7 @@ body {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 800;
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
@@ -63,13 +71,72 @@ body {
 }
 
 .section-intro {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--text-light);
   max-width: 680px;
   line-height: 1.75;
 }
 
-/* Buttons */
+/* ─── Global Keyframes ──────────────────────────────────────────────── */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes orbDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(40px, -30px) scale(1.05); }
+  66%  { transform: translate(-20px, 20px) scale(0.97); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes orbDrift2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(-50px, 30px) scale(1.08); }
+  66%  { transform: translate(30px, -20px) scale(0.95); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes neonPulse {
+  0%, 100% { box-shadow: var(--glow-sm); }
+  50%       { box-shadow: var(--glow-md); }
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-100%) skewX(-12deg); }
+  100% { transform: translateX(250%) skewX(-12deg); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: var(--border); }
+  50%       { border-color: rgba(139, 128, 251, 0.5); }
+}
+
+@keyframes scanLine {
+  0%   { top: -2px; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes cubePulse {
+  0%, 100% { opacity: 0.18; box-shadow: none; }
+  50%       { opacity: 0.4; box-shadow: 0 0 12px rgba(139, 128, 251, 0.3); }
+}
+
+@keyframes staggerIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Buttons ───────────────────────────────────────────────────────── */
+
 .btn {
   padding: 13px 26px;
   font-size: 0.92rem;
@@ -81,17 +148,35 @@ body {
   border: none;
   display: inline-block;
   font-family: 'Epilogue', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  transform: skewX(-12deg);
+  transition: none;
+}
+
+.btn:hover::after {
+  animation: shimmer 0.55s ease forwards;
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, #6d60f0 100%);
   color: white;
+  box-shadow: 0 4px 20px rgba(139, 128, 251, 0.3);
 }
 
 .btn-primary:hover {
-  background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(123, 111, 250, 0.45);
+  box-shadow: 0 8px 32px rgba(139, 128, 251, 0.55), 0 0 60px rgba(139, 128, 251, 0.2);
 }
 
 .btn-secondary {
@@ -101,16 +186,17 @@ body {
 }
 
 .btn-secondary:hover {
-  border-color: var(--border-hover);
-  color: var(--text);
-  box-shadow: 0 0 20px rgba(123, 111, 250, 0.08);
+  border-color: var(--accent);
+  color: var(--accent-light);
+  box-shadow: var(--glow-sm), inset 0 0 20px rgba(139, 128, 251, 0.06);
 }
 
-/* Scroll Animations */
+/* ─── Scroll Animations ─────────────────────────────────────────────── */
+
 .fade-in {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .fade-in.visible {
@@ -118,13 +204,9 @@ body {
   transform: translateY(0);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1.5rem 3rem;
-  }
+/* ─── Responsive ────────────────────────────────────────────────────── */
 
-  .section-title {
-    font-size: 2rem;
-  }
+@media (max-width: 768px) {
+  .container { padding: 0 1.5rem 3rem; }
+  .section-title { font-size: 2rem; }
 }
