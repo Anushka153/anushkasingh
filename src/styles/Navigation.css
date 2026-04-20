@@ -2,9 +2,9 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(18, 17, 31, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(13, 12, 26, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
 }
@@ -25,10 +25,16 @@ nav {
   cursor: pointer;
   text-decoration: none;
   color: var(--text);
+  transition: text-shadow 0.3s;
+}
+
+.logo:hover {
+  text-shadow: 0 0 20px rgba(139, 128, 251, 0.6);
 }
 
 .logo span {
   color: var(--accent);
+  text-shadow: 0 0 12px rgba(139, 128, 251, 0.7);
 }
 
 .nav-links {
@@ -43,7 +49,7 @@ nav {
   font-weight: 500;
   font-size: 0.88rem;
   position: relative;
-  transition: color 0.25s;
+  transition: color 0.25s, text-shadow 0.25s;
 }
 
 .nav-link::after {
@@ -53,13 +59,15 @@ nav {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  background: linear-gradient(90deg, var(--accent), var(--neon-cyan));
   transition: width 0.25s ease;
   border-radius: 2px;
+  box-shadow: 0 0 8px rgba(139, 128, 251, 0.8);
 }
 
 .nav-link:hover {
   color: var(--text);
+  text-shadow: 0 0 14px rgba(139, 128, 251, 0.35);
 }
 
 .nav-link:hover::after,
@@ -69,18 +77,11 @@ nav {
 
 .nav-link.active {
   color: var(--text);
+  text-shadow: 0 0 14px rgba(139, 128, 251, 0.35);
 }
 
 @media (max-width: 768px) {
-  .nav-container {
-    padding: 1rem 1.5rem;
-  }
-
-  .nav-links {
-    gap: 1.5rem;
-  }
-
-  .nav-link {
-    font-size: 0.8rem;
-  }
+  .nav-container { padding: 1rem 1.5rem; }
+  .nav-links { gap: 1.5rem; }
+  .nav-link { font-size: 0.8rem; }
 }

@@ -1,39 +1,53 @@
+/* ─── Floating neon orbs ────────────────────────────────────────────── */
+
 .hero {
   padding: 5rem 0 6rem;
   position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero::before {
-  content: '';
-  position: absolute;
-  width: 800px;
-  height: 800px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(139, 128, 251, 0.1) 0%, transparent 68%);
-  top: -300px;
-  right: -250px;
-  pointer-events: none;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(139, 128, 251, 0.18) 0%, transparent 65%);
+  top: -280px;
+  right: -220px;
+  animation: orbDrift 14s ease-in-out infinite;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hero::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 65%);
+  bottom: -150px;
+  left: -180px;
+  animation: orbDrift2 18s ease-in-out infinite;
 }
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Status badge ──────────────────────────────────────────────────── */
 
 @keyframes pulse {
   0%, 100% {
     opacity: 1;
-    box-shadow: 0 0 6px rgba(52, 211, 153, 0.6);
+    box-shadow: 0 0 6px rgba(52, 211, 153, 0.7), 0 0 14px rgba(52, 211, 153, 0.3);
   }
   50% {
-    opacity: 0.55;
-    box-shadow: 0 0 14px rgba(52, 211, 153, 0.2);
+    opacity: 0.6;
+    box-shadow: 0 0 3px rgba(52, 211, 153, 0.3);
   }
 }
 
@@ -43,13 +57,14 @@
   gap: 9px;
   padding: 7px 16px;
   background: var(--card-bg);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(52, 211, 153, 0.25);
   border-radius: 100px;
   font-size: 0.82rem;
   font-weight: 500;
   color: var(--text-light);
   margin-bottom: 2rem;
   animation: fadeInUp 0.55s ease forwards;
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.06);
 }
 
 .status-dot {
@@ -60,6 +75,8 @@
   animation: pulse 2.2s infinite;
   flex-shrink: 0;
 }
+
+/* ─── Hero heading ──────────────────────────────────────────────────── */
 
 .hero h1 {
   font-size: clamp(2.4rem, 5vw, 3.8rem);
@@ -72,11 +89,20 @@
 }
 
 .hero h1 .highlight {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 55%, #C084FC 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 45%, #c084fc 75%, var(--neon-cyan) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 5s ease infinite;
 }
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* ─── Subhead + personality ─────────────────────────────────────────── */
 
 .hero .subhead {
   font-size: 1.15rem;
@@ -93,9 +119,24 @@
   color: var(--accent);
   margin-bottom: 2.5rem;
   font-weight: 500;
-  opacity: 0.8;
+  opacity: 0.9;
   animation: fadeInUp 0.55s ease 0.3s both;
+  text-shadow: 0 0 18px rgba(139, 128, 251, 0.5);
 }
+
+.hero .personality::after {
+  content: '|';
+  margin-left: 2px;
+  animation: cursorBlink 1s step-end infinite;
+  color: var(--accent-light);
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ─── CTA buttons ───────────────────────────────────────────────────── */
 
 .cta-buttons {
   display: flex;
@@ -104,6 +145,8 @@
   animation: fadeInUp 0.55s ease 0.4s both;
 }
 
+/* ─── Snapshot grid ─────────────────────────────────────────────────── */
+
 .snapshot {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -111,6 +154,16 @@
   border-radius: 12px;
   overflow: hidden;
   animation: fadeInUp 0.55s ease 0.5s both;
+  position: relative;
+}
+
+.snapshot::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), var(--neon-cyan), transparent);
+  opacity: 0.6;
 }
 
 .snapshot-item {
@@ -123,7 +176,23 @@
   background: var(--card-bg);
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.25s, color 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.snapshot-item::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(139, 128, 251, 0.08), transparent);
+  transform: skewX(-12deg);
+}
+
+.snapshot-item:hover::after {
+  animation: shimmer 0.5s ease forwards;
 }
 
 .snapshot-item:last-child {
@@ -133,6 +202,7 @@
 .snapshot-item:hover {
   background: var(--card-hover);
   color: var(--text);
+  box-shadow: inset 0 0 30px rgba(139, 128, 251, 0.06);
 }
 
 .snapshot-item::before {
@@ -141,23 +211,14 @@
   font-weight: 700;
   flex-shrink: 0;
   margin-top: 1px;
+  text-shadow: 0 0 10px rgba(139, 128, 251, 0.6);
 }
 
+/* ─── Responsive ────────────────────────────────────────────────────── */
+
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-    letter-spacing: -0.5px;
-  }
-
-  .snapshot {
-    grid-template-columns: 1fr;
-  }
-
-  .snapshot-item {
-    border-right: none;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-  }
+  .hero h1 { font-size: 2rem; letter-spacing: -0.5px; }
+  .snapshot { grid-template-columns: 1fr; }
+  .snapshot-item { border-right: none; }
+  .cta-buttons { flex-direction: column; }
 }

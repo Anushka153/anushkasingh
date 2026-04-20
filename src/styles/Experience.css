@@ -9,20 +9,42 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* neon left bar */
 .experience-item::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 3px;
   height: 100%;
-  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-light) 100%);
+  background: linear-gradient(180deg, var(--accent) 0%, var(--neon-cyan) 100%);
   opacity: 0.7;
+  transition: opacity 0.3s, box-shadow 0.3s;
+}
+
+/* shimmer sweep */
+.experience-item::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -80%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(139, 128, 251, 0.06), transparent);
+  transform: skewX(-8deg);
+  pointer-events: none;
+}
+
+.experience-item:hover::after {
+  animation: shimmer 0.6s ease forwards;
 }
 
 .experience-item:hover {
   border-color: var(--border-hover);
-  box-shadow: 0 0 40px rgba(123, 111, 250, 0.06);
+  box-shadow: 0 0 40px rgba(139, 128, 251, 0.1), inset 0 0 40px rgba(139, 128, 251, 0.03);
+}
+
+.experience-item:hover::before {
+  opacity: 1;
+  box-shadow: 2px 0 16px rgba(139, 128, 251, 0.5);
 }
 
 .experience-header {
@@ -35,6 +57,11 @@
   margin-bottom: 0.4rem;
   color: var(--text);
   letter-spacing: -0.2px;
+  transition: text-shadow 0.3s;
+}
+
+.experience-item:hover .experience-role {
+  text-shadow: 0 0 20px rgba(139, 128, 251, 0.2);
 }
 
 .experience-company {
@@ -42,6 +69,7 @@
   color: var(--accent);
   font-weight: 600;
   margin-bottom: 0.25rem;
+  text-shadow: 0 0 12px rgba(139, 128, 251, 0.35);
 }
 
 .experience-period {
@@ -68,6 +96,11 @@
   position: relative;
   font-size: 0.93rem;
   line-height: 1.62;
+  transition: color 0.2s;
+}
+
+.experience-highlights li:hover {
+  color: var(--text);
 }
 
 .experience-highlights li::before {
@@ -76,4 +109,5 @@
   left: 0;
   color: var(--accent);
   font-weight: 700;
+  text-shadow: 0 0 8px rgba(139, 128, 251, 0.6);
 }
