@@ -58,106 +58,13 @@ export const projects = [
     ],
   },
   {
-    slug: 'bukukas-payments',
-    number: '03',
-    tag: 'Fintech • Payments',
-    title: 'Payments — 6 Weeks to Ship',
-    company: 'Bukukas (Lummo)',
-    role: 'Frontend Engineer',
-    duration: '2021',
-    challenge:
-      "It was 2021 at Bukukas—a bookkeeping startup in Indonesia with over a million customers. We had six weeks to ship payments before a hard shutdown date. If we didn't ship, we'd miss the Ramadan campaign window—our biggest commercial opportunity of the year—and hand it to a competitor who was already two weeks ahead of us. Every external blocker ran through Xendit, a third-party payments tool with 16–24 hour response times. And midway through, engineering and QA stalled on a dispute that could have taken days we didn't have.",
-    process: [
-      'Was the FE owner on a team of three, responsible for end-to-end delivery of the payment frontend—KYC onboarding, send/receive flows, payment history, and bank management. The direct connection point between backend, designer, PM, QA, and content writer.',
-      'Before committing to any dates, sat with the PM to translate the product spec into FE journeys—timelines came from the actual work, not the calendar.',
-      'When engineering and QA hit a dispute over bugs vs. features, escalating to leadership would have taken days. Spent half a day pre-triaging every disputed item by user impact and whether it would block a real transaction. Brought that analysis to the QA lead and PM—conceded everything where QA was defensible, held firm on one item the PRD was unambiguous on: whether payments auto-synced to bookkeeping history or required user opt-in.',
-      'Sign-off done in one session. The QA lead became someone I called before a release rather than negotiated with during one—that changed how every subsequent release went.',
-    ],
-    solution:
-      "Shipped the first week of January—before the competitor. Payment adoption became the primary growth metric in the weeks after launch. The Ramadan campaign, two months later, was built entirely on that infrastructure being live. The lesson wasn't about speed—it was that pre-triaging conflict by stakes, not by opinion, is how you get sign-off in one session instead of three.",
-    impact: [
-      { value: 'Pre-competitor', label: 'shipped before the competing product launched' },
-      { value: '+12%', label: 'revenue expansion post-launch' },
-      { value: '1 session', label: 'to resolve a QA dispute that could have taken days' },
-    ],
-  },
-  {
-    slug: 'lummo-design-system',
-    number: '04',
-    tag: 'Design Systems • Frontend',
-    title: 'Design System',
-    company: 'Lummo (Donut.cx)',
-    role: 'Product Manager',
-    duration: '2022–2023',
-    challenge:
-      "Lummo was pivoting from Bukukas to Donut.cx. Three frontend engineering pods were converging on one codebase for the first time—each with different component conventions, different token strategies, and different definitions of what a 'correct' implementation looked like. A designer working across all three pods had no shared library. Every sprint, the same design decision was being interpreted three different ways in three different parts of the product. The compounding cost of that inconsistency—in QA cycles, in re-work, in handoff friction—was invisible until you added it up.",
-    process: [
-      'Before writing any components, mapped the actual surface area: what was being built in the pivot product, what patterns were repeating across pods, and where the highest-frequency inconsistencies were. The token strategy came from that audit—not from first principles.',
-      'Made a deliberate sequencing decision: build the design system in parallel with the pivot product, not before it. This meant the component library was built from live requirements—every component had a real use case on day one, not a hypothetical one.',
-      'Defined variant coverage upfront with the designer. The decision was to ship fewer components with complete state coverage—hover, focus, disabled, error, loading—rather than more components with partial states. Incomplete states are worse than missing components because they break silently.',
-      'Token architecture was the highest-leverage early decision. Established a two-layer system: primitive tokens (raw values) and semantic tokens (contextual mappings). This meant a theme change or brand update could propagate across 70+ components by changing a handful of semantic tokens—not by touching individual components.',
-      'Led cross-pod convention alignment sessions to resolve conflicts before they became component-level inconsistencies. The hardest decisions were naming conventions and spacing scales—both required a single standard across teams building in different contexts.',
-    ],
-    solution:
-      "Three pods shipped one consistent product from a single shared library. The designer handed off once—to the system—instead of three times to three interpretations. The token architecture meant the design system could absorb brand changes without component-level rewrites. 35+ components with hundreds of variants, production-ready 2 weeks ahead of a 6-month schedule, with that time returned to testing and edge-case coverage.",
-    impact: [
-      { value: '35+', label: 'components shipped with 100s of variants and states' },
-      { value: '~50%', label: 'reduction in design-to-dev handoff time' },
-      { value: '2 weeks', label: 'ahead of schedule — returned to QA' },
-    ],
-  },
-  {
-    slug: 'donut-analytics',
-    number: '05',
-    tag: 'B2B SaaS • Product & Engineering',
-    title: 'Analytics — 2 Weeks, Not 7',
-    company: 'Donut.cx (Lummo)',
-    role: 'Frontend Engineer + PM',
-    duration: '2022–2023',
-    challenge:
-      "Lummo had just pivoted from Bukukas to Donut.cx—a B2B customer engagement SaaS. Clients could not see what was working on their platform. Without analytics, they couldn't make decisions. Without decisions, they couldn't justify staying. A few clients needed analytics just to onboard. I asked my engineering manager for a PM capacity role on Donut.cx—no PM title, no roadmap, no OKRs. He agreed. The honest estimate to build analytics properly was 6–7 weeks. The competitive window was 2. The competitor was close, and the client needed to see analytics working before they would commit.",
-    process: [
-      'Started by finding what was broken rather than inheriting what existed. The clearest gap was analytics visibility—clients could not see what was working on their platform.',
-      'Made the call: integrate Looker Studio via iframe instead of building the analytics layer from scratch. Two weeks, not seven. The tradeoff was real—the embedded Looker interface would not match the design system. Named it upfront and presented the tradeoff to stakeholders: 7 weeks done right, or 2 weeks with a UI inconsistency we would resolve in the next sprint.',
-      'Leadership pushed back—they wanted to think it through. Instead of arguing, built a rough working version and showed them. They could see it working. They aligned. The UI inconsistency was visible and acceptable. Speed was the right call.',
-      'Put real effort into making the embedded interface feel as native as possible—matching Donut.cx colors and styling as closely as the iframe constraint allowed. Wrote the specs, developed alongside the engineers, and owned QA.',
-    ],
-    solution:
-      "We onboarded before the competitor. The client we would have lost while building it properly is still a client. A shipped imperfect solution that keeps a client beats a perfect solution that arrives after they have signed somewhere else. The UI inconsistency was resolved in the next sprint, as promised.",
-    impact: [
-      { value: '10', label: 'new clients onboarded in 2 months after launch' },
-      { value: '+20%', label: 'client base growth (50 → 60 clients)' },
-      { value: '+21%', label: 'active user growth in the first 30 days' },
-    ],
-  },
-  {
-    slug: 'shopbop-ai',
-    number: '06',
-    tag: 'E-commerce • MBA Project',
-    title: 'AI Outfit Discovery',
-    company: 'Amazon / Shopbop',
-    role: 'Product Management Practicum',
-    duration: '2024–2025',
-    challenge:
-      "Shopbop customers discovered great individual pieces but rarely left with a complete outfit. The experience was built for items—search, filter, add to cart—not for how fashion shoppers actually think. Shoppers think in outfits: 'what goes with this?', 'what would I wear this to?'. The gap wasn't missing features. It was a fundamental mismatch between the browsing model and the mental model.",
-    process: [
-      'Led user research to map how customers think about outfit discovery versus individual item browsing—surfaced that the existing search and recommendation experience couldn\'t bridge the gap between finding a piece and building a look.',
-      'Designed a product concept that introduces contextual AI-driven outfit suggestions—reasoning at the outfit level, not the SKU level—while preserving the browsing freedom that makes fashion discovery enjoyable rather than prescriptive.',
-      'Applied agile cycles for rapid prototyping with a cross-functional team of CS students and business stakeholders, replicating a real PM environment with technical and business constraints.',
-      'Developed full product requirements, success metrics, and an evaluation framework for measuring outfit relevance at scale—including how to assess when AI suggestions help vs. when they constrain discovery.',
-    ],
-    solution:
-      "The core insight was that the opportunity wasn't smarter search—it was contextual discovery. AI that reasons in outfits rather than SKUs, balancing personalization with the serendipity that makes browsing enjoyable. The evaluation framework specifically addressed the hardest product question: how do you measure whether an AI recommendation felt right without being too narrow?",
-    impact: [],
-  },
-  {
     slug: 'pm-prep-tool',
-    number: '07',
+    number: '03',
     tag: 'Tooling • PM Prep',
     title: 'PM Interview Prep Tool',
     company: 'Personal Project',
     role: 'Product & Engineer',
-    duration: '2025',
+    duration: 'Apr 2026',
     challenge:
       "Preparing for PM interviews across multiple companies at once meant juggling scattered notes, frameworks from different sources, and no reliable way to track where I was weak. Generic prep resources weren't structured around actual practice sessions—there was no place to log a case, score it, see the pattern across 30 cases, and act on it. I needed a system that worked the way I actually prep: by doing a case, reviewing it, spotting the gap, and drilling that specific thing.",
     process: [
@@ -192,6 +99,99 @@ export const projects = [
         wide: true,
       },
     ],
+  },
+  {
+    slug: 'bukukas-payments',
+    number: '04',
+    tag: 'Fintech • Payments',
+    title: 'Payments — 6 Weeks to Ship',
+    company: 'Bukukas (Lummo)',
+    role: 'Frontend Engineer',
+    duration: '2021',
+    challenge:
+      "It was 2021 at Bukukas—a bookkeeping startup in Indonesia with over a million customers. We had six weeks to ship payments before a hard shutdown date. If we didn't ship, we'd miss the Ramadan campaign window—our biggest commercial opportunity of the year—and hand it to a competitor who was already two weeks ahead of us. Every external blocker ran through Xendit, a third-party payments tool with 16–24 hour response times. And midway through, engineering and QA stalled on a dispute that could have taken days we didn't have.",
+    process: [
+      'Was the FE owner on a team of three, responsible for end-to-end delivery of the payment frontend—KYC onboarding, send/receive flows, payment history, and bank management. The direct connection point between backend, designer, PM, QA, and content writer.',
+      'Before committing to any dates, sat with the PM to translate the product spec into FE journeys—timelines came from the actual work, not the calendar.',
+      'When engineering and QA hit a dispute over bugs vs. features, escalating to leadership would have taken days. Spent half a day pre-triaging every disputed item by user impact and whether it would block a real transaction. Brought that analysis to the QA lead and PM—conceded everything where QA was defensible, held firm on one item the PRD was unambiguous on: whether payments auto-synced to bookkeeping history or required user opt-in.',
+      'Sign-off done in one session. The QA lead became someone I called before a release rather than negotiated with during one—that changed how every subsequent release went.',
+    ],
+    solution:
+      "Shipped the first week of January—before the competitor. Payment adoption became the primary growth metric in the weeks after launch. The Ramadan campaign, two months later, was built entirely on that infrastructure being live. The lesson wasn't about speed—it was that pre-triaging conflict by stakes, not by opinion, is how you get sign-off in one session instead of three.",
+    impact: [
+      { value: 'Pre-competitor', label: 'shipped before the competing product launched' },
+      { value: '+12%', label: 'revenue expansion post-launch' },
+      { value: '1 session', label: 'to resolve a QA dispute that could have taken days' },
+    ],
+  },
+  {
+    slug: 'lummo-design-system',
+    number: '05',
+    tag: 'Design Systems • Frontend',
+    title: 'Design System',
+    company: 'Lummo (Donut.cx)',
+    role: 'Product Manager',
+    duration: '2022–2023',
+    challenge:
+      "Lummo was pivoting from Bukukas to Donut.cx. Three frontend engineering pods were converging on one codebase for the first time—each with different component conventions, different token strategies, and different definitions of what a 'correct' implementation looked like. A designer working across all three pods had no shared library. Every sprint, the same design decision was being interpreted three different ways in three different parts of the product. The compounding cost of that inconsistency—in QA cycles, in re-work, in handoff friction—was invisible until you added it up.",
+    process: [
+      'Before writing any components, mapped the actual surface area: what was being built in the pivot product, what patterns were repeating across pods, and where the highest-frequency inconsistencies were. The token strategy came from that audit—not from first principles.',
+      'Made a deliberate sequencing decision: build the design system in parallel with the pivot product, not before it. This meant the component library was built from live requirements—every component had a real use case on day one, not a hypothetical one.',
+      'Defined variant coverage upfront with the designer. The decision was to ship fewer components with complete state coverage—hover, focus, disabled, error, loading—rather than more components with partial states. Incomplete states are worse than missing components because they break silently.',
+      'Token architecture was the highest-leverage early decision. Established a two-layer system: primitive tokens (raw values) and semantic tokens (contextual mappings). This meant a theme change or brand update could propagate across 70+ components by changing a handful of semantic tokens—not by touching individual components.',
+      'Led cross-pod convention alignment sessions to resolve conflicts before they became component-level inconsistencies. The hardest decisions were naming conventions and spacing scales—both required a single standard across teams building in different contexts.',
+    ],
+    solution:
+      "Three pods shipped one consistent product from a single shared library. The designer handed off once—to the system—instead of three times to three interpretations. The token architecture meant the design system could absorb brand changes without component-level rewrites. 35+ components with hundreds of variants, production-ready 2 weeks ahead of a 6-month schedule, with that time returned to testing and edge-case coverage.",
+    impact: [
+      { value: '35+', label: 'components shipped with 100s of variants and states' },
+      { value: '~50%', label: 'reduction in design-to-dev handoff time' },
+      { value: '2 weeks', label: 'ahead of schedule — returned to QA' },
+    ],
+  },
+  {
+    slug: 'donut-analytics',
+    number: '06',
+    tag: 'B2B SaaS • Product & Engineering',
+    title: 'Analytics — 2 Weeks, Not 7',
+    company: 'Donut.cx (Lummo)',
+    role: 'Frontend Engineer + PM',
+    duration: '2022–2023',
+    challenge:
+      "Lummo had just pivoted from Bukukas to Donut.cx—a B2B customer engagement SaaS. Clients could not see what was working on their platform. Without analytics, they couldn't make decisions. Without decisions, they couldn't justify staying. A few clients needed analytics just to onboard. I asked my engineering manager for a PM capacity role on Donut.cx—no PM title, no roadmap, no OKRs. He agreed. The honest estimate to build analytics properly was 6–7 weeks. The competitive window was 2. The competitor was close, and the client needed to see analytics working before they would commit.",
+    process: [
+      'Started by finding what was broken rather than inheriting what existed. The clearest gap was analytics visibility—clients could not see what was working on their platform.',
+      'Made the call: integrate Looker Studio via iframe instead of building the analytics layer from scratch. Two weeks, not seven. The tradeoff was real—the embedded Looker interface would not match the design system. Named it upfront and presented the tradeoff to stakeholders: 7 weeks done right, or 2 weeks with a UI inconsistency we would resolve in the next sprint.',
+      'Leadership pushed back—they wanted to think it through. Instead of arguing, built a rough working version and showed them. They could see it working. They aligned. The UI inconsistency was visible and acceptable. Speed was the right call.',
+      'Put real effort into making the embedded interface feel as native as possible—matching Donut.cx colors and styling as closely as the iframe constraint allowed. Wrote the specs, developed alongside the engineers, and owned QA.',
+    ],
+    solution:
+      "We onboarded before the competitor. The client we would have lost while building it properly is still a client. A shipped imperfect solution that keeps a client beats a perfect solution that arrives after they have signed somewhere else. The UI inconsistency was resolved in the next sprint, as promised.",
+    impact: [
+      { value: '10', label: 'new clients onboarded in 2 months after launch' },
+      { value: '+20%', label: 'client base growth (50 → 60 clients)' },
+      { value: '+21%', label: 'active user growth in the first 30 days' },
+    ],
+  },
+  {
+    slug: 'shopbop-ai',
+    number: '07',
+    tag: 'E-commerce • MBA Project',
+    title: 'AI Outfit Discovery',
+    company: 'Amazon / Shopbop',
+    role: 'Product Management Practicum',
+    duration: '2024–2025',
+    challenge:
+      "Shopbop customers discovered great individual pieces but rarely left with a complete outfit. The experience was built for items—search, filter, add to cart—not for how fashion shoppers actually think. Shoppers think in outfits: 'what goes with this?', 'what would I wear this to?'. The gap wasn't missing features. It was a fundamental mismatch between the browsing model and the mental model.",
+    process: [
+      'Led user research to map how customers think about outfit discovery versus individual item browsing—surfaced that the existing search and recommendation experience couldn\'t bridge the gap between finding a piece and building a look.',
+      'Designed a product concept that introduces contextual AI-driven outfit suggestions—reasoning at the outfit level, not the SKU level—while preserving the browsing freedom that makes fashion discovery enjoyable rather than prescriptive.',
+      'Applied agile cycles for rapid prototyping with a cross-functional team of CS students and business stakeholders, replicating a real PM environment with technical and business constraints.',
+      'Developed full product requirements, success metrics, and an evaluation framework for measuring outfit relevance at scale—including how to assess when AI suggestions help vs. when they constrain discovery.',
+    ],
+    solution:
+      "The core insight was that the opportunity wasn't smarter search—it was contextual discovery. AI that reasons in outfits rather than SKUs, balancing personalization with the serendipity that makes browsing enjoyable. The evaluation framework specifically addressed the hardest product question: how do you measure whether an AI recommendation felt right without being too narrow?",
+    impact: [],
   },
   {
     slug: 'drivezy',
