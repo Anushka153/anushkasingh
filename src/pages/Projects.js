@@ -177,25 +177,14 @@ export const projects = [
     ],
     screenshots: [
       {
-        src: '/assets/images/pm-prep-dashboard.png',
-        caption: 'Dashboard — case count, avg score, score progression, and gap analysis',
+        src: '/assets/images/pm-prep-app-dashboard.png',
+        caption: 'Dashboard — cases done, avg score, best case, and needs-work list',
         wide: true,
       },
       {
-        src: '/assets/images/pm-prep-cases.png',
-        caption: 'Case Log — every session scored, tagged, and traceable',
-      },
-      {
-        src: '/assets/images/pm-prep-frameworks.png',
-        caption: 'Frameworks — when-to-use guidance for every major PM framework',
-      },
-      {
-        src: '/assets/images/pm-prep-keywords.png',
-        caption: 'Power Keywords — flip-card drills by PM competency',
-      },
-      {
-        src: '/assets/images/pm-prep-cardgames.png',
-        caption: 'Card Games — randomized estimation and market sizing practice',
+        src: '/assets/images/pm-prep-logcase.png',
+        caption: '/logcase — Claude Code skill that scores a case and logs it to Supabase in one command',
+        wide: true,
       },
     ],
   },
