@@ -186,6 +186,11 @@ export const projects = [
         caption: '/logcase — Claude Code skill that scores a case and logs it to Supabase in one command',
         wide: true,
       },
+      {
+        src: '/assets/images/pm-prep-caselog.png',
+        caption: 'Case Log — filterable by company, type, and score; inline feedback showing what you nailed and what you missed',
+        wide: true,
+      },
     ],
   },
   {
