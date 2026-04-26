@@ -105,6 +105,31 @@ function ProjectDetail() {
           </div>
         </section>
 
+        {/* Screenshots */}
+        {project.screenshots && project.screenshots.length > 0 && (
+          <>
+            <div className="pd-divider" />
+            <section className="pd-section pd-screenshots">
+              <div className="pd-section-label">What Was Built</div>
+              <div className="pd-section-content">
+                <div className="pd-screenshots-grid">
+                  {project.screenshots.map((shot, i) => (
+                    <div
+                      key={i}
+                      className={`pd-screenshot-item${shot.wide ? ' pd-screenshot-wide' : ''}`}
+                    >
+                      <img src={shot.src} alt={shot.caption} />
+                      {shot.caption && (
+                        <div className="pd-screenshot-caption">{shot.caption}</div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
         {/* The Impact */}
         {project.impact && project.impact.length > 0 && (
           <>

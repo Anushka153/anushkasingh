@@ -151,8 +151,57 @@ export const projects = [
     impact: [],
   },
   {
-    slug: 'drivezy',
+    slug: 'pm-prep-tool',
     number: '07',
+    tag: 'Tooling • PM Prep',
+    title: 'PM Interview Prep Tool',
+    company: 'Personal Project',
+    role: 'Product & Engineer',
+    duration: '2025',
+    challenge:
+      "Preparing for PM interviews across multiple companies at once meant juggling scattered notes, frameworks from different sources, and no reliable way to track where I was weak. Generic prep resources weren't structured around actual practice sessions—there was no place to log a case, score it, see the pattern across 30 cases, and act on it. I needed a system that worked the way I actually prep: by doing a case, reviewing it, spotting the gap, and drilling that specific thing.",
+    process: [
+      'Built a structured case log where each session is scored, tagged by company and type, and linked to patterns that surfaced across sessions—so practice produces signal, not just reps.',
+      'Added a Frameworks library covering CIRCLES, RICE, Jobs-to-be-Done, Kano, opportunity scoring, and more—each with when-to-use guidance and example prompts, so frameworks become instincts rather than a list to memorize.',
+      'Built a Power Keywords flip-card system organized by PM competency (strategy, execution, metrics, leadership)—designed for drilling the vocabulary that signals PM fluency in interviews.',
+      'Added interactive card games for market sizing and estimation practice—randomized scenarios with structured reasoning prompts to build speed and confidence under pressure.',
+      'Included a Market Sizing examples library, an Industries reference, a Behavioral Stories tracker, and a Resource DB—covering every preparation surface in one authenticated tool.',
+      'Deployed with Supabase auth so the prep environment stays private and session data persists across devices.',
+    ],
+    solution:
+      "A single authenticated prep environment covering every surface of a PM interview—case practice with scoring and pattern tracking, frameworks, keywords, estimation games, behavioral stories, and a curated resource library. Built because no existing tool combined active practice tracking with reference material in one place.",
+    impact: [
+      { value: '33', label: 'cases logged across 8 companies' },
+      { value: '13', label: 'prep modules in one tool' },
+      { value: '300+', label: 'power keywords across 6 PM competencies' },
+    ],
+    screenshots: [
+      {
+        src: '/assets/images/pm-prep-dashboard.png',
+        caption: 'Dashboard — case count, avg score, score progression, and gap analysis',
+        wide: true,
+      },
+      {
+        src: '/assets/images/pm-prep-cases.png',
+        caption: 'Case Log — every session scored, tagged, and traceable',
+      },
+      {
+        src: '/assets/images/pm-prep-frameworks.png',
+        caption: 'Frameworks — when-to-use guidance for every major PM framework',
+      },
+      {
+        src: '/assets/images/pm-prep-keywords.png',
+        caption: 'Power Keywords — flip-card drills by PM competency',
+      },
+      {
+        src: '/assets/images/pm-prep-cardgames.png',
+        caption: 'Card Games — randomized estimation and market sizing practice',
+      },
+    ],
+  },
+  {
+    slug: 'drivezy',
+    number: '08',
     tag: 'Mobility • Platform',
     title: 'Vendor Onboarding — 7 Days to 2',
     company: 'Drivezy',

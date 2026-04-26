@@ -370,6 +370,61 @@
   opacity: 0.75;
 }
 
+/* ─── Screenshots ───────────────────────────────────────────────────── */
+
+.pd-screenshots {
+  padding: 4rem 0;
+}
+
+.pd-screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.pd-screenshots-grid .pd-screenshot-wide {
+  grid-column: 1 / -1;
+}
+
+.pd-screenshot-item {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--surface);
+}
+
+.pd-screenshot-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.pd-screenshot-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pd-screenshot-caption {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  opacity: 0.6;
+  padding: 10px 14px;
+  border-top: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@media (max-width: 640px) {
+  .pd-screenshots-grid {
+    grid-template-columns: 1fr;
+  }
+  .pd-screenshots-grid .pd-screenshot-wide {
+    grid-column: 1;
+  }
+}
+
 /* ─── Next project ──────────────────────────────────────────────────── */
 
 .pd-next {
